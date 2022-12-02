@@ -11,5 +11,10 @@ pub fn get_input_dir() -> PathBuf {
 #[cfg(test)]
 #[ctor::ctor]
 fn init_logger() {
-    tracing_subscriber::fmt().compact().init();
+    use tracing_subscriber::EnvFilter;
+
+    tracing_subscriber::fmt()
+        .compact()
+        .with_env_filter(EnvFilter::from_default_env())
+        .init();
 }
