@@ -1,9 +1,5 @@
-use std::{
-    error::Error,
-    fmt::{Debug, Display},
-    iter::Iterator,
-};
-use tracing::{debug, info, trace};
+use std::{error::Error, fmt::Debug, iter::Iterator};
+use tracing::{debug, trace};
 
 /// Always sorted from biggest to smallest
 #[derive(Debug)]
