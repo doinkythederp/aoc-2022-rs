@@ -49,14 +49,14 @@ pub fn solve(lines: impl Iterator<Item = Result<String, impl Error>> + Debug) ->
 mod tests {
     use tracing::info;
 
-    use super::super::get_lines;
+    use crate::get_lines;
     use std::time::Instant;
 
     use super::solve;
 
     #[test]
     fn d1p1() {
-        let input_lines = get_lines();
+        let input_lines = get_lines("day_1.txt");
 
         let before_solve = Instant::now();
         let solution = solve(input_lines);
