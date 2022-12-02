@@ -55,7 +55,7 @@ mod tests {
     use super::solve;
 
     #[test]
-    fn d1p1() {
+    fn d1p2() {
         let input_lines = get_lines();
 
         let before_solve = Instant::now();
