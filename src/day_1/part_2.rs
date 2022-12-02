@@ -41,9 +41,6 @@ impl Leaderboard {
     }
 }
 
-/// Input: Inventories, seperated by blank line
-///
-/// Output: Highest calorie count of any inventory
 #[tracing::instrument]
 pub fn solve(lines: impl Iterator<Item = Result<String, impl Error>> + Debug) -> u32 {
     debug!("Iterating over input lines to populate the leaderboard");
