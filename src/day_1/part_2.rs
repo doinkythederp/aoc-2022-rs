@@ -46,7 +46,7 @@ impl Leaderboard {
 /// Output: Highest calorie count of any inventory
 #[tracing::instrument]
 pub fn solve(lines: impl Iterator<Item = Result<String, impl Error>> + Debug) -> u32 {
-    debug!("Iterating over input lines to find the biggest calorie count");
+    debug!("Iterating over input lines to populate the leaderboard");
 
     let mut leaderboard = Leaderboard([0, 0, 0]);
     let mut elf_num = 1_u32;
