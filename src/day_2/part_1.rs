@@ -15,8 +15,8 @@ impl Eq for RPSChoice {}
 
 impl RPSChoice {
     // assumption: all characters are ascii
-    pub const MY_CHAR_BASE: u8 = b'A';
-    pub const OPPONENT_CHAR_BASE: u8 = b'X';
+    pub const OPPONENT_CHAR_BASE: u8 = b'A';
+    pub const MY_CHAR_BASE: u8 = b'X';
 
     /// Converts an encoded Rock Paper Scissors move
     /// into the RPSChoice type used in the rest of the program
@@ -133,12 +133,12 @@ pub fn solve(lines: impl Iterator<Item = Result<String, impl Error>> + Debug) ->
         })
         .fold(0, |total_points, moves| {
             let mut moves = moves.into_iter();
-            let my_move = moves.next().expect("invalid format in input");
             let opponent_move = moves.next().expect("invalid format in input");
+            let my_move = moves.next().expect("invalid format in input");
             trace!("my move code: {my_move:?}; opponent move code: {opponent_move:?}");
 
-            let my_move = RPSChoice::from_char(my_move, RPSChoice::MY_CHAR_BASE);
             let opponent_move = RPSChoice::from_char(opponent_move, RPSChoice::OPPONENT_CHAR_BASE);
+            let my_move = RPSChoice::from_char(my_move, RPSChoice::MY_CHAR_BASE);
             let play_result: RPSResult = (&my_move, &opponent_move).into();
             debug!(
                 "my move: {my_move:?}; opponent move: {opponent_move:?}; result: {play_result:?}"
